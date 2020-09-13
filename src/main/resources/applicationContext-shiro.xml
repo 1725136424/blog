@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--创建核心shiro过滤器-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!--注入安全管理器-->
+        <property name="securityManager" ref="securityManager"/>
+        <!--配置认证后的一连串过滤器-->
+        <property name="filters">
+            <map>
+                <entry key="authc" value-ref="loginFormFilter"/>
+            </map>
+        </property>
+        <!--请求认证地址-->
+        <property name="loginUrl" value="/login"/>
+        <!--配置权限路径-->
+        <property name="filterChainDefinitions">
+            <value>
+                /static/** = anon
+                /index/** = anon
+                /articleDesc/** = anon
+                /home/** = anon
+                /loginAndRegister/** = anon
+                /favicon.ico = anon
+                /logout = logout
+                /articleDesc/followUser = authc
+                /articleDesc/cancelFollow = authc
+                /articleDesc/commitReview = authc
+                /articleDesc/answerReview = authc
+                /** = authc
+            </value>
+        </property>
+    </bean>
+
+    <!--创建安全管理器-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!--注入realm数据源-->
+        <property name="realm" ref="loginRealm"/>
+        <!--注入缓存管理器-->
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
+    <!--配置表单过滤器-->
+    <bean id="loginFormFilter" class="com.study.filter.LoginFormFilter"/>
+
+    <!--开启cglib-->
+    <aop:config proxy-target-class="true"/>
+
+    <!--配置注解支持shiro控制-->
+    <bean id="attributeSourceAdvisor" class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!--创建realm数据源-->
+    <bean id="loginRealm" class="com.study.realm.LoginRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+
+    <!--创建凭证匹配器-->
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="2"/>
+    </bean>
+
+    <!--创建缓存管理器-->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:shiro-ehCache.xml"/>
+    </bean>
+
+</beans>

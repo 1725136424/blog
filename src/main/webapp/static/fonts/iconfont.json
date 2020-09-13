@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "791894",
+      "name": "分类",
+      "font_class": "fenlei-copy",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "1157313",
+      "name": "时间 00",
+      "font_class": "shijian00",
+      "unicode": "e6ce",
+      "unicode_decimal": 59086
+    }
+  ]
+}

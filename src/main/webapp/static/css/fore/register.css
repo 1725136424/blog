@@ -1,0 +1,285 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+img {
+  vertical-align: bottom;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.top {
+  width: 100%;
+  height: 150px;
+  background: url("../../images/fore/top-background.jpg") no-repeat center 72%;
+  background-size: cover;
+}
+.top .container {
+  height: 100%;
+  position: relative;
+}
+.top .container .user {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.top .container .user img {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.top .container .user a {
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 16px;
+  color: #ffffff;
+  box-sizing: border-box;
+  background: #31b0d5;
+  padding: 10px 10px;
+  line-height: 10px;
+  text-decoration: none;
+}
+.top .container .user a:hover {
+  background: #17a2b8;
+}
+.top .container .btnAry {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: start;
+}
+.top .container .btnAry .login {
+  margin-right: 20px;
+}
+.top .container .btnAry .login,
+.top .container .btnAry .publish {
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 16px;
+  color: #ffffff;
+  box-sizing: border-box;
+  background: #31b0d5;
+  padding: 10px 10px;
+  line-height: 10px;
+}
+.top .container .btnAry .login i,
+.top .container .btnAry .publish i {
+  font-style: normal;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  line-height: 14px;
+  width: 14px;
+  height: 14px;
+  background: red;
+  bottom: -4px;
+  right: -4px;
+  border-radius: 50%;
+}
+.top .container .btnAry .login:hover,
+.top .container .btnAry .publish:hover {
+  background: #17a2b8;
+}
+.navBar {
+  z-index: 666;
+  width: 100%;
+}
+.navBar .navbar {
+  margin-bottom: 0;
+}
+.navBar .navbar-default {
+  background: #fff;
+}
+.navBar .navbar-default .navbar-header .navbar-brand {
+  font-size: 13px;
+}
+@media screen and (min-width: 768px) {
+  .navBar .navbar-default .navbar-header .navbar-brand {
+    display: none;
+  }
+}
+.navBar .navbar-default .categoryList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navBar .navbar-default .categoryList li {
+  position: relative;
+}
+.navBar .navbar-default .categoryList li.active a {
+  color: #e67e22;
+  background: #ffffff;
+}
+.navBar .navbar-default .categoryList li:hover a {
+  color: #e67e22;
+}
+.navBar .navbar-default .categoryList li:hover .children {
+  display: block;
+}
+.navBar .navbar-default .categoryList li:hover:first-child:hover .children {
+  display: none;
+}
+.navBar .navbar-default .categoryList li .children {
+  border-radius: 6px;
+  display: none;
+  padding: 10px 10px;
+  z-index: 6666;
+  box-shadow: 1px 1px 10px;
+  position: absolute;
+  background: #ffffff;
+  top: 112%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 768px) {
+  .navBar .navbar-default .categoryList li .children {
+    background: #eaeaea;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .navBar .navbar-default .categoryList li .children li {
+    margin: 10px 0;
+    text-align: left;
+  }
+  .navBar .navbar-default .categoryList li .children i {
+    display: none;
+  }
+  .container .box {
+    width: 97% !important;
+  }
+  .container .box .body .codeBox .right {
+    margin-left: 15px !important;
+  }
+  .container .box .body .codeBox .right a {
+    display: none;
+  }
+  .container .box .body .codeBox .right img{
+    width: 70px;
+    height: 30px;
+  }
+  .container .box .body .service {
+    font-size: 12px !important;
+  }
+}
+.navBar .navbar-default .categoryList li .children li {
+  font-size: 13px;
+  margin: 8px 0;
+  position: relative;
+  z-index: 666;
+  white-space: nowrap;
+  text-align: center;
+}
+.navBar .navbar-default .categoryList li .children li a {
+  text-decoration: none;
+  color: #333333;
+}
+.navBar .navbar-default .categoryList li .children li a:hover {
+  color: #e67e22;
+}
+.navBar .navbar-default .categoryList li .children i {
+  position: absolute;
+  z-index: 665;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30%) rotate(45deg);
+}
+@media screen and (max-width: 768px) {
+  .navBar .navbar-default .categoryList {
+    width: 100%;
+    display: block;
+  }
+}
+.container .box {
+  margin: 50px auto;
+  width: 50%;
+}
+.container .box .body li {
+  display: none;
+}
+.container .box .body li.active {
+  display: block;
+}
+.container .box .body li form > div {
+  margin: 20px auto;
+  width: 60%;
+}
+.container .box .body li form > div .help-block {
+  text-align: left !important;
+}
+.container .box .body li form > div input {
+  width: 100%;
+  height: 32px;
+  display: block;
+  border: 1px solid #cccccc;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 6px;
+}
+.container .box .body li form > div.codeBox {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  align-content: center;
+}
+.container .box .body li form > div.codeBox .left {
+  width: 60%;
+}
+.container .box .body li form > div.codeBox .left input {
+  width: 100%;
+  margin: 0 auto;
+}
+.container .box .body li form > div.codeBox .right {
+  margin-left: 30px;
+}
+.container .box .body li form > div.codeBox .right a {
+  font-size: 12px;
+}
+.container .box .body li form > div.service {
+  margin-top: 10px;
+  text-align: right;
+}
+.container .box .body li form > div.picture {
+  display: flex;
+  justify-content: space-between;
+}
+.container .box .body li form > div.picture .right input {
+  border: none;
+}
+.container .box .body li form input[type=submit] {
+  margin: 0 auto;
+  width: 60%;
+  height: 32px;
+  display: block;
+  border: 1px solid #cccccc;
+  outline: none;
+  border-radius: 6px;
+  background: #ecba27;
+  color: #ffffff;
+}
+.container .box .body li form input[type=submit]:hover {
+  background: #e67e22;
+}
+.container .box .body li .tip {
+  display: none;
+}
