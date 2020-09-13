@@ -39,6 +39,10 @@
         <shiro.version>1.4.0</shiro.version>
         <slf4j.verison>1.7.25</slf4j.verison>
         <cglib.version>3.1</cglib.version>
+        <json.version>20200518</json.version>
+        <ueditor.version>1.4.3.6</ueditor.version>
+        <jsoup.version>1.10.2</jsoup.version>
+        <javaMail.version>1.6.2</javaMail.version>
     </properties>
 
     <dependencies>
@@ -245,16 +249,22 @@
             <artifactId>jsoup</artifactId>
             <version>1.10.2</version>
         </dependency>
+        <!--jsoup-->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
+        </dependency>
         <!--发送邮件-->
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
-            <version>1.6.2</version>
+            <version>${javaMail.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>5.1.7.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
     </dependencies>
 

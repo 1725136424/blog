@@ -17,7 +17,9 @@
 <div data-options="region:'north'" style="height:100px;overflow: hidden">
     <div class="north_top" style="background: #02a2aa; height: 100px;
                 display: flex; justify-content: start; align-items: center; padding-left: 20px">
-        <img src="${ pageContext.request.contextPath }/static/images/back/login_logo.png" alt="">
+        <a href="${ pageContext.request.contextPath }/index/page?categoryId=-1">
+            <img src="${ pageContext.request.contextPath }/static/images/back/login_logo.png" alt="">
+        </a>
     </div>
     <div style="position: absolute; right: 50px; top: 30px;">
         <img src="<shiro:principal property="picture"/>"

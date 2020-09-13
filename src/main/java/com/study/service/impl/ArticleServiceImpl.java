@@ -11,25 +11,14 @@ import com.study.pojo.entity.QueryVo;
 import com.study.pojo.user.User;
 import com.study.service.ArticleService;
 import com.study.service.CategoryService;
-import com.study.util.Field;
 import com.study.util.HtmlUtils;
-import jdk.nashorn.internal.runtime.regexp.RegExp;
-import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
-import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
-import java.util.regex.Pattern;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
