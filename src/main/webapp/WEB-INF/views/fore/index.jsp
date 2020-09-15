@@ -1,3 +1,5 @@
+<%@ page import="com.study.pojo.article.Article" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -105,7 +107,7 @@
                             <div class="right">
                                 <div class="title">${ article.title }</div>
                                 <div class="text">
-                                        ${ article.subTitle }
+                                        ${ article.content }
                                 </div>
                                 <div class="publishDate">
                                     <div class="dot">·</div>

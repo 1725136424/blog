@@ -77,6 +77,7 @@ $(function () {
 
     let textAry = $(".article .right .text")
     $.each(textAry, (i, v) => {
+        console.log(v);
         $clamp(v, {clamp: 3})
     })
 

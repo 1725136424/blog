@@ -79,7 +79,7 @@ public class ArticleServiceImpl implements ArticleService {
         User user = (User) subject.getPrincipal();
         // 设置文章数据
         String contentStr = HtmlUtils.html2Str(article.getContent());
-        article.setSubTitle(contentStr.substring(0, 300));
+        article.setSubTitle(contentStr.substring(0, 30));
         article.setPublishDate(new Date());
         article.setEditDate(new Date());
         article.setUserId(user.getId());
@@ -91,7 +91,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void edit(Article article) {
         String content = HtmlUtils.html2Str(article.getContent());
-        article.setSubTitle(content.substring(0, 300));
+        article.setSubTitle(content.substring(0, 30));
         article.setEditDate(new Date());
         articleDao.updateByPrimaryKeySelective(article);
     }
@@ -118,7 +118,9 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void convertContent2Text(Article article) {
         String content = article.getContent();
-        article.setContent(HtmlUtils.html2Str(content).replaceAll(("\\u00A0+|\\s*"), ""));
+        article.setContent(HtmlUtils.html2Str(content)
+                .replaceAll("<", "&nbsp")
+                .replaceAll(("\\u00A0+|\\s*"), ""));
     }
 
     @Override
