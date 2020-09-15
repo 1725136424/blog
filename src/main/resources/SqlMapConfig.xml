@@ -5,7 +5,7 @@
 <configuration>
     <settings>
         <!--sql输出-->
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
         <!--懒加载-->
         <setting name="lazyLoadingEnabled" value="true"/>
         <setting name="aggressiveLazyLoading" value="false"/>
