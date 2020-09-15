@@ -77,7 +77,7 @@ $(function () {
 
     let textAry = $(".article .right .text")
     $.each(textAry, (i, v) => {
-        $clamp(v, {clamp: 4})
+        $clamp(v, {clamp: 3})
     })
 
     let publishDateAry = $(".article .right .publishDate")

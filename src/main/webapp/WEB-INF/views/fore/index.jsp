@@ -11,7 +11,6 @@
     <meta content="webkit" name="renderer">
     <!--为了让 IE 浏览器运行最新的渲染模式下-->
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="baidu-site-verification" content="MarlcEWlhm" />
     <meta content="博客 Java Web 社区讨论 万佳豪的博客系统" name="keywords">
     <meta content="万佳豪的博客系统" name="description">
     <title>博客首页</title>
@@ -106,7 +105,7 @@
                             <div class="right">
                                 <div class="title">${ article.title }</div>
                                 <div class="text">
-                                        ${ article.content }
+                                        ${ article.subTitle }
                                 </div>
                                 <div class="publishDate">
                                     <div class="dot">·</div>
